@@ -8811,28 +8811,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\djalburb\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Users\\Carlos U\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\djalburb\\Desktop\\GymManager\\GymManager\\GymManager.csproj",
+      "projectUniqueName": "D:\\Carlos Files\\Workspace\\GymManager\\GymManager\\GymManager.csproj",
       "projectName": "GymManager",
-      "projectPath": "C:\\Users\\djalburb\\Desktop\\GymManager\\GymManager\\GymManager.csproj",
-      "packagesPath": "C:\\Users\\djalburb\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\djalburb\\Desktop\\GymManager\\GymManager\\obj\\",
+      "projectPath": "D:\\Carlos Files\\Workspace\\GymManager\\GymManager\\GymManager.csproj",
+      "packagesPath": "C:\\Users\\Carlos U\\.nuget\\packages\\",
+      "outputPath": "D:\\Carlos Files\\Workspace\\GymManager\\GymManager\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\djalburb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Carlos U\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.2.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -8889,12 +8886,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[3.1.2, 3.1.2]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -8903,7 +8894,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.408\\RuntimeIdentifierGraph.json"
       }
     }
   }

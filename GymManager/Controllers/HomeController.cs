@@ -23,7 +23,6 @@ namespace GymManager.Controllers
         {
             return View();
         }
-        [Authorize(Roles = "Usuario")]
         public IActionResult Privacy()
         {
             return View();

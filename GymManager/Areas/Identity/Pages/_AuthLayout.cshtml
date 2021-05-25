@@ -8,10 +8,10 @@
             <div class="card-header">
                 <ul class="nav nav-tabs card-header-tabs">
                     <li class="nav-item">
-                        <a class="nav-link" href="/Identity/Account/Login">Iniciar Sesion</a>
+                        <a class="nav-link" href="/Identity/Account/Login">Iniciar Sesión</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/Identity/Account/Register">Registrarme</a>
+                        <a class="nav-link" href="/Identity/Account/Register">Registro</a>
                     </li>
                 </ul>
             </div>
@@ -34,7 +34,7 @@
         var current = location.pathname;
         $('.nav-tabs li a').each(function () {
             var $this = $(this);
-            if (current.indexOf($this.attr('href')) !== -1) {
+            if (current.indexOf($this.attr('href')) !== - 1) {
                 $this.addClass('active');
             }
         })
