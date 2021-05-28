@@ -1,0 +1,27 @@
+﻿@model GymManager.Models.Ciudades
+
+@{
+    ViewData["Title"] = "Detalles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Detalles de Ciudad</h3>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>@Html.DisplayNameFor(model => model.Nombre): </strong>@Html.DisplayFor(model => model.Nombre)</li>
+                    </ul>
+                    <div class="mt-5">
+                        <a asp-action="Edit" asp-route-id="@Model.IdCiudad" class="btn btn-primary">Editar</a> |
+                        <a asp-action="Index">Volver al Listado</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
