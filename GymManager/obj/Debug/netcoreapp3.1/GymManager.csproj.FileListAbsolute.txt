@@ -371,3 +371,8 @@ D:\Carlos Files\Workspace\GymManager\GymManager\obj\Debug\netcoreapp3.1\Razor\Vi
 D:\Carlos Files\Workspace\GymManager\GymManager\obj\Debug\netcoreapp3.1\Razor\Views\MetodosPagos\Details.cshtml.g.cs
 D:\Carlos Files\Workspace\GymManager\GymManager\obj\Debug\netcoreapp3.1\Razor\Views\MetodosPagos\Edit.cshtml.g.cs
 D:\Carlos Files\Workspace\GymManager\GymManager\obj\Debug\netcoreapp3.1\Razor\Views\MetodosPagos\Index.cshtml.g.cs
+D:\Carlos Files\Workspace\GymManager\GymManager\obj\Debug\netcoreapp3.1\Razor\Views\Clientes\Create.cshtml.g.cs
+D:\Carlos Files\Workspace\GymManager\GymManager\obj\Debug\netcoreapp3.1\Razor\Views\Clientes\Delete.cshtml.g.cs
+D:\Carlos Files\Workspace\GymManager\GymManager\obj\Debug\netcoreapp3.1\Razor\Views\Clientes\Details.cshtml.g.cs
+D:\Carlos Files\Workspace\GymManager\GymManager\obj\Debug\netcoreapp3.1\Razor\Views\Clientes\Edit.cshtml.g.cs
+D:\Carlos Files\Workspace\GymManager\GymManager\obj\Debug\netcoreapp3.1\Razor\Views\Clientes\Index.cshtml.g.cs

@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace GymManager.Migrations
+namespace GymManager.Migrations.GymManagerDB
 {
-    public partial class MigracionInicial : Migration
+    public partial class Login : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

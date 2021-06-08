@@ -7,11 +7,11 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace GymManager.Migrations
+namespace GymManager.Migrations.GymManagerDB
 {
     [DbContext(typeof(GymManagerDBContext))]
-    [Migration("20210525013737_Segunda Migracion")]
-    partial class SegundaMigracion
+    [Migration("20210608212623_Login")]
+    partial class Login
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

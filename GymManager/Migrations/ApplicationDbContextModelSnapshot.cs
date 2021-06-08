@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace GymManager.Migrations.ApplicationDb
+namespace GymManager.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     partial class ApplicationDbContextModelSnapshot : ModelSnapshot
@@ -35,6 +35,34 @@ namespace GymManager.Migrations.ApplicationDb
                     b.ToTable("Ciudades");
                 });
 
+            modelBuilder.Entity("GymManager.Models.Clientes", b =>
+                {
+                    b.Property<int>("IdCliente")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Apellidos")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Edad")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdCiudad")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("IdCliente");
+
+                    b.HasIndex("IdCiudad");
+
+                    b.ToTable("Clientes");
+                });
+
             modelBuilder.Entity("GymManager.Models.MetodosPagos", b =>
                 {
                     b.Property<int>("IdMetodoPago")
@@ -50,6 +78,15 @@ namespace GymManager.Migrations.ApplicationDb
                     b.HasKey("IdMetodoPago");
 
                     b.ToTable("MetodosPagos");
+                });
+
+            modelBuilder.Entity("GymManager.Models.Clientes", b =>
+                {
+                    b.HasOne("GymManager.Models.Ciudades", "Ciudades")
+                        .WithMany("Clientes")
+                        .HasForeignKey("IdCiudad")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }
