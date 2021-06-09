@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GymManager.Models
 {
@@ -28,5 +29,12 @@ namespace GymManager.Models
         [Required(ErrorMessage = "Favor ingresar precio")]
         [Range(0.0, Double.MaxValue)]
         public double Descuento { get; set; }
+
+        //Relacion Con Monedas
+        [Display(Name = "Moneda")]
+        public int IdMoneda { get; set; }
+
+        [ForeignKey("IdMoneda")]
+        public virtual Moneda Moneda { get; set; }
     }
 }

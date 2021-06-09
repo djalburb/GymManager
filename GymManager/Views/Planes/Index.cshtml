@@ -5,62 +5,38 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
+<h1>Planes</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-success"><i class="fas fa-plus"></i> Nuevo</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Descripcion1)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Descripcion2)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CodigoAlterno)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DuracionDias)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Precio)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Descuento)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Descripcion1)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Descripcion2)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CodigoAlterno)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DuracionDias)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Precio)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Descuento)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.IdPlan">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.IdPlan">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.IdPlan">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+    <div class="col-md-3 mt-2">
+        <div class="card">
+            <div class="card-header">
+                <div class="d-flex">
+                    @Html.DisplayFor(modelItem => item.Descripcion1)
+                    <div class="ml-auto">
+                        <a asp-action="Details" asp-route-id="@item.IdPlan" class="btn btn-sm btn-secondary"><i class="fas fa-info"></i></a>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="card-body">
+                <p>@Html.DisplayFor(modelItem => item.Descripcion2)</p>
+                <p><strong>@Html.DisplayNameFor(modelItem => item.DuracionDias):</strong> @Html.DisplayFor(modelItem => item.DuracionDias)</p>
+                <h4><strong>@Html.DisplayNameFor(modelItem => item.Precio):</strong> C$ @Html.DisplayFor(modelItem => item.Precio)</h4>
+            </div>
+            <div class="card-footer text-center">
+                <div class="form-group">
+                    <a asp-action="Edit" asp-route-id="@item.IdPlan" class="btn btn-sm btn-primary">Editar</a>
+                    <a asp-action="Delete" asp-route-id="@item.IdPlan" class="btn btn-sm btn-danger">Eliminar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    }
+</div>

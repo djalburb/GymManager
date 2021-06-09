@@ -17,5 +17,6 @@ namespace GymManager.Data
         public DbSet<MetodosPagos> MetodosPagos { get; set; }
         public DbSet<Clientes> Clientes { get; set; }
         public DbSet<Planes> Planes { get; set; }
+        public DbSet<Moneda> Monedas { get; set; }
     }
 }

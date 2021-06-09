@@ -305,7 +305,6 @@ D:\Carlos Files\Workspace\GymManager\GymManager\bin\Debug\netcoreapp3.1\runtimes
 D:\Carlos Files\Workspace\GymManager\GymManager\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 D:\Carlos Files\Workspace\GymManager\GymManager\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 D:\Carlos Files\Workspace\GymManager\GymManager\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-D:\Carlos Files\Workspace\GymManager\GymManager\obj\Debug\netcoreapp3.1\GymManager.csprojAssemblyReference.cache
 D:\Carlos Files\Workspace\GymManager\GymManager\obj\Debug\netcoreapp3.1\GymManager.AssemblyInfoInputs.cache
 D:\Carlos Files\Workspace\GymManager\GymManager\obj\Debug\netcoreapp3.1\GymManager.AssemblyInfo.cs
 D:\Carlos Files\Workspace\GymManager\GymManager\obj\Debug\netcoreapp3.1\GymManager.RazorAssemblyInfo.cache
