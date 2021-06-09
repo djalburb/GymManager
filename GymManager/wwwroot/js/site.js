@@ -30,4 +30,10 @@ $(document).ready(function () {
             }
         }
     });
+
+
+    $('.cedula').mask('000-000000-0000A');
+    $('.telefono').mask('00000000');
+
+
 });

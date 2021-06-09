@@ -9,15 +9,19 @@
     <div class="col-md-6 offset-md-3">
         <div class="card">
             <div class="card-header">
-                <h3>Detalles Metodo Pago</h3>
+                <div class="d-flex">
+                    <h4>Detalle Método Pago</h4>
+                    <div class="ml-auto">
+                        <a asp-action="Index" class="btn btn-secondary"><i class="fas fa-arrow-left"></i></a>
+                    </div>
+                </div>
             </div>
             <div class="card-body">
                 <ul class="list-group">
                     <li class="list-group-item"><strong>@Html.DisplayNameFor(model => model.Nombre): </strong>@Html.DisplayFor(model => model.Nombre)</li>
                 </ul>
                 <div class="mt-5">
-                    <a asp-action="Edit" asp-route-id="@Model.IdMetodoPago" class="btn btn-primary">Editar</a> |
-                    <a asp-action="Index">Volver al Listado</a>
+                    <a asp-action="Edit" asp-route-id="@Model.IdMetodoPago" class="btn btn-primary">Editar</a>
                 </div>
             </div>
         </div>

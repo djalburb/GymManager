@@ -2,7 +2,7 @@
 
 namespace GymManager.Migrations
 {
-    public partial class Clientes : Migration
+    public partial class NC : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

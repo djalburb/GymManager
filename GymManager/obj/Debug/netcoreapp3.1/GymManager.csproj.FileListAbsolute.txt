@@ -412,3 +412,8 @@ C:\Users\djalburb\Desktop\GymManager\GymManager\obj\Debug\netcoreapp3.1\Razor\Vi
 C:\Users\djalburb\Desktop\GymManager\GymManager\obj\Debug\netcoreapp3.1\Razor\Views\Clientes\Details.cshtml.g.cs
 C:\Users\djalburb\Desktop\GymManager\GymManager\obj\Debug\netcoreapp3.1\Razor\Views\Clientes\Edit.cshtml.g.cs
 C:\Users\djalburb\Desktop\GymManager\GymManager\obj\Debug\netcoreapp3.1\Razor\Views\Clientes\Index.cshtml.g.cs
+D:\Carlos Files\Workspace\GymManager\GymManager\obj\Debug\netcoreapp3.1\Razor\Views\Planes\Create.cshtml.g.cs
+D:\Carlos Files\Workspace\GymManager\GymManager\obj\Debug\netcoreapp3.1\Razor\Views\Planes\Delete.cshtml.g.cs
+D:\Carlos Files\Workspace\GymManager\GymManager\obj\Debug\netcoreapp3.1\Razor\Views\Planes\Details.cshtml.g.cs
+D:\Carlos Files\Workspace\GymManager\GymManager\obj\Debug\netcoreapp3.1\Razor\Views\Planes\Edit.cshtml.g.cs
+D:\Carlos Files\Workspace\GymManager\GymManager\obj\Debug\netcoreapp3.1\Razor\Views\Planes\Index.cshtml.g.cs

@@ -21,10 +21,11 @@ namespace GymManager.Models
         [Display(Name = "Cédula")]
         public string Cedula { get; set; }
         [Display(Name = "Teléfono")]
+        [DataType(DataType.PhoneNumber)]
         public string Telefono { get; set; }
         [DataType(DataType.PhoneNumber)]
         public string Celular { get; set; }
-        [DataType(DataType.EmailAddress)]
+        [DataType(DataType.EmailAddress, ErrorMessage = "Dirección de correo no válida")]
         public string Correo { get; set; }
         [Display(Name = "Dirección")]
         public string Direccion { get; set; }

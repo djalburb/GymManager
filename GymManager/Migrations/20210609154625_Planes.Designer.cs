@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GymManager.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210609025240_Clientes")]
-    partial class Clientes
+    [Migration("20210609154625_Planes")]
+    partial class Planes
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -100,6 +100,40 @@ namespace GymManager.Migrations
                     b.HasKey("IdMetodoPago");
 
                     b.ToTable("MetodosPagos");
+                });
+
+            modelBuilder.Entity("GymManager.Models.Planes", b =>
+                {
+                    b.Property<int>("IdPlan")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("CodigoAlterno")
+                        .HasColumnType("nvarchar(20)")
+                        .HasMaxLength(20);
+
+                    b.Property<string>("Descripcion1")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.Property<string>("Descripcion2")
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.Property<double>("Descuento")
+                        .HasColumnType("float");
+
+                    b.Property<int>("DuracionDias")
+                        .HasColumnType("int");
+
+                    b.Property<double>("Precio")
+                        .HasColumnType("float");
+
+                    b.HasKey("IdPlan");
+
+                    b.ToTable("Planes");
                 });
 
             modelBuilder.Entity("GymManager.Models.Clientes", b =>
