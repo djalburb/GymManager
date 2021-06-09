@@ -57,7 +57,7 @@ namespace GymManager.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdCliente,Nombre,Apellidos,Edad,IdCiudad")] Clientes clientes)
+        public async Task<IActionResult> Create([Bind("IdCliente,Nombre,Apellidos,Sexo,Cedula,Telefono,Celular,Correo,Direccion,Activo,IdCiudad")] Clientes clientes)
         {
             if (ModelState.IsValid)
             {
@@ -91,7 +91,7 @@ namespace GymManager.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdCliente,Nombre,Apellidos,Edad,IdCiudad")] Clientes clientes)
+        public async Task<IActionResult> Edit(int id, [Bind("IdCliente,Nombre,Apellidos,Sexo,Cedula,Telefono,Celular,Correo,Direccion,Activo,IdCiudad")] Clientes clientes)
         {
             if (id != clientes.IdCliente)
             {

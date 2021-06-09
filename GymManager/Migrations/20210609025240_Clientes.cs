@@ -2,7 +2,7 @@
 
 namespace GymManager.Migrations
 {
-    public partial class Inicial : Migration
+    public partial class Clientes : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -38,9 +38,15 @@ namespace GymManager.Migrations
                 {
                     IdCliente = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Nombre = table.Column<string>(nullable: false),
-                    Apellidos = table.Column<string>(nullable: false),
-                    Edad = table.Column<int>(nullable: false),
+                    Nombre = table.Column<string>(maxLength: 100, nullable: false),
+                    Apellidos = table.Column<string>(maxLength: 150, nullable: false),
+                    Sexo = table.Column<string>(nullable: true),
+                    Cedula = table.Column<string>(nullable: true),
+                    Telefono = table.Column<string>(nullable: true),
+                    Celular = table.Column<string>(nullable: true),
+                    Correo = table.Column<string>(nullable: true),
+                    Direccion = table.Column<string>(nullable: true),
+                    Activo = table.Column<bool>(nullable: false),
                     IdCiudad = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
