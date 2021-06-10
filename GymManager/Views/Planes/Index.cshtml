@@ -28,7 +28,7 @@
             <div class="card-body">
                 <p>@Html.DisplayFor(modelItem => item.Descripcion2)</p>
                 <p><strong>@Html.DisplayNameFor(modelItem => item.DuracionDias):</strong> @Html.DisplayFor(modelItem => item.DuracionDias)</p>
-                <h4><strong>@Html.DisplayNameFor(modelItem => item.Precio):</strong> C$ @Html.DisplayFor(modelItem => item.Precio)</h4>
+                <h4><strong>@Html.DisplayNameFor(modelItem => item.Precio):</strong> @Html.DisplayFor(modelItem => item.Moneda.Simbolo) @Html.DisplayFor(modelItem => item.Precio)</h4>
             </div>
             <div class="card-footer text-center">
                 <div class="form-group">

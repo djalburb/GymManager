@@ -1,7 +1,7 @@
 ﻿@model GymManager.Models.Planes
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Nuevo Plan";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="row">
@@ -64,7 +64,13 @@
                                 <span asp-validation-for="Descuento" class="text-danger"></span>
                             </div>
                         </div>
+
                     </div>
+
+                        <div class="form-group">
+                            <label asp-for="IdMoneda" class="control-label"></label>
+                            <select asp-for="IdMoneda" class="form-control" asp-items="(IEnumerable<SelectListItem>)@ViewData["IdMoneda"]"></select>
+                        </div>
 
                     <div class="form-group">
                         <button type="submit" class="btn btn-success"><i class="fas fa-save"></i> Guardar</button>

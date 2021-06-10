@@ -2,7 +2,7 @@
 
 namespace GymManager.Migrations
 {
-    public partial class NC : Migration
+    public partial class Inicial090621 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -33,6 +33,20 @@ namespace GymManager.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Monedas",
+                columns: table => new
+                {
+                    IdMoneda = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Nombre = table.Column<string>(maxLength: 50, nullable: false),
+                    Simbolo = table.Column<string>(maxLength: 3, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Monedas", x => x.IdMoneda);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Clientes",
                 columns: table => new
                 {
@@ -60,10 +74,40 @@ namespace GymManager.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Planes",
+                columns: table => new
+                {
+                    IdPlan = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Descripcion1 = table.Column<string>(maxLength: 100, nullable: false),
+                    Descripcion2 = table.Column<string>(maxLength: 100, nullable: true),
+                    CodigoAlterno = table.Column<string>(maxLength: 20, nullable: true),
+                    DuracionDias = table.Column<int>(nullable: false),
+                    Precio = table.Column<double>(nullable: false),
+                    Descuento = table.Column<double>(nullable: false),
+                    IdMoneda = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Planes", x => x.IdPlan);
+                    table.ForeignKey(
+                        name: "FK_Planes_Monedas_IdMoneda",
+                        column: x => x.IdMoneda,
+                        principalTable: "Monedas",
+                        principalColumn: "IdMoneda",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Clientes_IdCiudad",
                 table: "Clientes",
                 column: "IdCiudad");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Planes_IdMoneda",
+                table: "Planes",
+                column: "IdMoneda");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -75,7 +119,13 @@ namespace GymManager.Migrations
                 name: "MetodosPagos");
 
             migrationBuilder.DropTable(
+                name: "Planes");
+
+            migrationBuilder.DropTable(
                 name: "Ciudades");
+
+            migrationBuilder.DropTable(
+                name: "Monedas");
         }
     }
 }

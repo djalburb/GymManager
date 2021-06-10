@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GymManager.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210609154625_Planes")]
-    partial class Planes
+    [Migration("20210610011733_Inicial090621")]
+    partial class Inicial090621
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -102,6 +102,28 @@ namespace GymManager.Migrations
                     b.ToTable("MetodosPagos");
                 });
 
+            modelBuilder.Entity("GymManager.Models.Moneda", b =>
+                {
+                    b.Property<int>("IdMoneda")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.Property<string>("Simbolo")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(3)")
+                        .HasMaxLength(3);
+
+                    b.HasKey("IdMoneda");
+
+                    b.ToTable("Monedas");
+                });
+
             modelBuilder.Entity("GymManager.Models.Planes", b =>
                 {
                     b.Property<int>("IdPlan")
@@ -128,10 +150,15 @@ namespace GymManager.Migrations
                     b.Property<int>("DuracionDias")
                         .HasColumnType("int");
 
+                    b.Property<int>("IdMoneda")
+                        .HasColumnType("int");
+
                     b.Property<double>("Precio")
                         .HasColumnType("float");
 
                     b.HasKey("IdPlan");
+
+                    b.HasIndex("IdMoneda");
 
                     b.ToTable("Planes");
                 });
@@ -141,6 +168,15 @@ namespace GymManager.Migrations
                     b.HasOne("GymManager.Models.Ciudades", "Ciudades")
                         .WithMany("Clientes")
                         .HasForeignKey("IdCiudad")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("GymManager.Models.Planes", b =>
+                {
+                    b.HasOne("GymManager.Models.Moneda", "Moneda")
+                        .WithMany("Planes")
+                        .HasForeignKey("IdMoneda")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
