@@ -633,3 +633,9 @@ C:\Workspace\GymManager\GymManager\obj\Debug\netcoreapp3.1\Razor\Views\Monedas\D
 C:\Workspace\GymManager\GymManager\obj\Debug\netcoreapp3.1\Razor\Views\Monedas\Details.cshtml.g.cs
 C:\Workspace\GymManager\GymManager\obj\Debug\netcoreapp3.1\Razor\Views\Monedas\Edit.cshtml.g.cs
 C:\Workspace\GymManager\GymManager\obj\Debug\netcoreapp3.1\Razor\Views\Monedas\Index.cshtml.g.cs
+D:\Carlos Files\Workspace\GymManager\GymManager\obj\Debug\netcoreapp3.1\GymManager.csprojAssemblyReference.cache
+D:\Carlos Files\Workspace\GymManager\GymManager\obj\Debug\netcoreapp3.1\Razor\Views\Monedas\Create.cshtml.g.cs
+D:\Carlos Files\Workspace\GymManager\GymManager\obj\Debug\netcoreapp3.1\Razor\Views\Monedas\Delete.cshtml.g.cs
+D:\Carlos Files\Workspace\GymManager\GymManager\obj\Debug\netcoreapp3.1\Razor\Views\Monedas\Details.cshtml.g.cs
+D:\Carlos Files\Workspace\GymManager\GymManager\obj\Debug\netcoreapp3.1\Razor\Views\Monedas\Edit.cshtml.g.cs
+D:\Carlos Files\Workspace\GymManager\GymManager\obj\Debug\netcoreapp3.1\Razor\Views\Monedas\Index.cshtml.g.cs

@@ -22,12 +22,14 @@ namespace GymManager.Models
         [Display(Name = "Código Alterno")]
         public string CodigoAlterno { get; set; }
         [Display(Name = "Duración Días")]
+        [Range(1, 10000, ErrorMessage = "El valor no puede ser menor que uno.")]
         public int DuracionDias { get; set; }
         [Required(ErrorMessage = "Favor ingresar precio")]
         [Range(0.0, Double.MaxValue)]
         public double Precio { get; set; }
         [Required(ErrorMessage = "Favor ingresar precio")]
-        [Range(0.0, Double.MaxValue)]
+        [Range(0.0, 100.0)]
+        [Display(Name = "Descuento %")]
         public double Descuento { get; set; }
 
         //Relacion Con Monedas

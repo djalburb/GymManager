@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using GymManager.Data;
 using GymManager.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace GymManager.Controllers
 {
@@ -23,7 +24,7 @@ namespace GymManager.Controllers
         public async Task<IActionResult> Index()
         {
             var applicationDbContext = _context.Planes.Include(c => c.Moneda);
-            return View(await applicationDbContext.ToListAsync());
+            return View(await applicationDbContext.OrderBy(a => a.DuracionDias).ToListAsync());
         }
 
         // GET: Planes/Details/5
@@ -35,7 +36,7 @@ namespace GymManager.Controllers
             }
 
             var planes = await _context.Planes
-                .Include(c => c.IdMoneda)
+                .Include(c => c.Moneda)
                 .FirstOrDefaultAsync(m => m.IdPlan == id);
             if (planes == null)
             {
@@ -68,7 +69,7 @@ namespace GymManager.Controllers
             ViewData["IdMoneda"] = new SelectList(_context.Monedas, "IdMoneda", "Nombre", planes.IdMoneda);
             return View(planes);
         }
-
+        [Authorize(Roles = "Administrador")]
         // GET: Planes/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -82,7 +83,7 @@ namespace GymManager.Controllers
             {
                 return NotFound();
             }
-            ViewData["IdMoneda"] = new SelectList(_context.Monedas, "IdMoneda", "Simbolo", planes.IdMoneda);
+            ViewData["IdMoneda"] = new SelectList(_context.Monedas, "IdMoneda", "Nombre", planes.IdMoneda);
             return View(planes);
         }
 
@@ -118,7 +119,7 @@ namespace GymManager.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdMoneda"] = new SelectList(_context.Ciudades, "IdMoneda", "Simbolo", planes.IdMoneda);
+            ViewData["IdMoneda"] = new SelectList(_context.Ciudades, "IdMoneda", "Nombre", planes.IdMoneda);
             return View(planes);
         }
 
@@ -131,7 +132,7 @@ namespace GymManager.Controllers
             }
 
             var planes = await _context.Planes
-                .Include(c => c.IdMoneda)
+                .Include(c => c.Moneda)
                 .FirstOrDefaultAsync(m => m.IdPlan == id);
             if (planes == null)
             {
