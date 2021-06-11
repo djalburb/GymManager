@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GymManager.Migrations.GymManagerDB
 {
     [DbContext(typeof(GymManagerDBContext))]
-    [Migration("20210610012016_Login")]
+    [Migration("20210610034249_Login")]
     partial class Login
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

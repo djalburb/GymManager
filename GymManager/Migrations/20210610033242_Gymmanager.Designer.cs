@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GymManager.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210610011733_Inicial090621")]
-    partial class Inicial090621
+    [Migration("20210610033242_Gymmanager")]
+    partial class Gymmanager
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

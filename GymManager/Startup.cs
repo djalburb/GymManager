@@ -29,7 +29,7 @@ namespace GymManager
             //Agregamos Razor Pages
             services.AddRazorPages();
 
-            services.AddDbContext<ApplicationDbContext>(options =>
+            services.AddDbContext<ApplicationDbContext>(options => 
             options.UseSqlServer(
                 Configuration.GetConnectionString("GymManagerDBContextConnection")));
 
