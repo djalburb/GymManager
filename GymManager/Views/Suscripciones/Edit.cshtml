@@ -5,85 +5,141 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Edit</h1>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="d-flex">
+                        <h4>Nueva Suscripción</h4>
+                        <div class="ml-auto">
+                            <a asp-action="Index" class="btn btn-secondary"><i class="fas fa-arrow-left"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Edit">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" asp-for="IdSuscripcion" />
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label asp-for="Fecha" class="control-label"></label>
+                                    <input asp-for="Fecha" class="form-control" value="@DateTime.Today.ToString("yyyy-MM-dd")" />
+                                    <span asp-validation-for="Fecha" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="IdCliente" class="control-label"></label>
+                                    <select asp-for="IdCliente" class="form-control" asp-items="ViewBag.IdCliente"></select>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label asp-for="IdMetodoPago" class="control-label"></label>
+                                    <select asp-for="IdMetodoPago" class="form-control" asp-items="ViewBag.IdMetodoPago"></select>
+                                </div>
+                            </div>
+                        </div>
 
-<h4>Suscripciones</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="IdSuscripcion" />
-            <div class="form-group">
-                <label asp-for="Fecha" class="control-label"></label>
-                <input asp-for="Fecha" class="form-control" />
-                <span asp-validation-for="Fecha" class="text-danger"></span>
+
+
+                        <fieldset class="border p-2">
+                            <legend>Datos del Plan</legend>
+
+                            <div class="form-group">
+                                <label asp-for="IdPlan" class="control-label"></label>
+                                <select asp-for="IdPlan" class="form-control" asp-items="ViewBag.IdPlan" id="plan"></select>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label asp-for="FechaInicio" class="control-label"></label>
+                                        <input asp-for="FechaInicio" class="form-control" />
+                                        <span asp-validation-for="FechaInicio" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label asp-for="FechaFin" class="control-label"></label>
+                                        <input asp-for="FechaFin" class="form-control" />
+                                        <span asp-validation-for="FechaFin" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label asp-for="Cantidad" class="control-label"></label>
+                                        <input asp-for="Cantidad" class="form-control" />
+                                        <span asp-validation-for="Cantidad" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label asp-for="PrecioUnit" class="control-label"></label>
+                                        <input asp-for="PrecioUnit" class="form-control" />
+                                        <span asp-validation-for="PrecioUnit" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+
+
+
+                        <div class="row justify-content-end">
+                            <div class="col-md-4">
+                                <ul class="list-group">
+                                    <li class="list-group-item">
+
+                                        <div class="input-group mb-2 mr-sm-2">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text">SubTotal </div>
+                                            </div>
+                                            <input type="number" asp-for="SubTotal" class="form-control" />
+                                            <span asp-validation-for="SubTotal" class="text-danger"></span>
+                                        </div>
+
+                                    </li>
+                                    <li class="list-group-item">
+
+
+                                        <div class="input-group mb-2 mr-sm-2">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text">Descuento</div>
+                                            </div>
+                                            <input type="number" asp-for="Descuento" class="form-control" />
+                                            <span asp-validation-for="Descuento" class="text-danger"></span>
+                                        </div>
+
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="input-group mb-2 mr-sm-2">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text"><strong>TOTAL    </strong></div>
+                                            </div>
+                                            <input type="number" asp-for="Total" class="form-control" />
+                                            <span asp-validation-for="Total" class="text-danger"></span>
+                                        </div>
+
+                                        <div class="form-group form-check">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" asp-for="Estado" /> @Html.DisplayNameFor(model => model.Estado)
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="form-group">
+                                            <input type="submit" value="Guardar" class="btn btn-success btn-block" />
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="IdCliente" class="control-label"></label>
-                <select asp-for="IdCliente" class="form-control" asp-items="ViewBag.IdCliente"></select>
-                <span asp-validation-for="IdCliente" class="text-danger"></span>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Estado" /> @Html.DisplayNameFor(model => model.Estado)
-                </label>
-            </div>
-            <div class="form-group">
-                <label asp-for="IdMetodoPago" class="control-label"></label>
-                <select asp-for="IdMetodoPago" class="form-control" asp-items="ViewBag.IdMetodoPago"></select>
-                <span asp-validation-for="IdMetodoPago" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="IdPlan" class="control-label"></label>
-                <select asp-for="IdPlan" class="form-control" asp-items="ViewBag.IdPlan"></select>
-                <span asp-validation-for="IdPlan" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FechaInicio" class="control-label"></label>
-                <input asp-for="FechaInicio" class="form-control" />
-                <span asp-validation-for="FechaInicio" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FechaFin" class="control-label"></label>
-                <input asp-for="FechaFin" class="form-control" />
-                <span asp-validation-for="FechaFin" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Cantidad" class="control-label"></label>
-                <input asp-for="Cantidad" class="form-control" />
-                <span asp-validation-for="Cantidad" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PrecioUnit" class="control-label"></label>
-                <input asp-for="PrecioUnit" class="form-control" />
-                <span asp-validation-for="PrecioUnit" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="SubTotal" class="control-label"></label>
-                <input asp-for="SubTotal" class="form-control" />
-                <span asp-validation-for="SubTotal" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Descuento" class="control-label"></label>
-                <input asp-for="Descuento" class="form-control" />
-                <span asp-validation-for="Descuento" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Total" class="control-label"></label>
-                <input asp-for="Total" class="form-control" />
-                <span asp-validation-for="Total" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
