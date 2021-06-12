@@ -18,5 +18,6 @@ namespace GymManager.Data
         public DbSet<Clientes> Clientes { get; set; }
         public DbSet<Planes> Planes { get; set; }
         public DbSet<Moneda> Monedas { get; set; }
+        public DbSet<Suscripciones> Suscripciones { get; set; }
     }
 }

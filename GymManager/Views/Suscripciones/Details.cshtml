@@ -1,0 +1,66 @@
+﻿@model GymManager.Models.Suscripciones
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <div class="d-flex">
+                    <h4>Detalles de Suscripcion</h4>
+                    <div class="ml-auto">
+                        <a asp-action="Index" class="btn btn-secondary"><i class="fas fa-arrow-left"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <strong>@Html.DisplayNameFor(model => model.Fecha): </strong> @Html.DisplayFor(model => model.Fecha)
+                    </li>
+                    <li class="list-group-item">
+                        <strong>@Html.DisplayNameFor(model => model.Clientes): </strong>@Html.DisplayFor(model => model.Clientes.Nombre)  @Html.DisplayFor(model => model.Clientes.Apellidos)
+                    </li>
+                    <li>
+                        <strong>@Html.DisplayNameFor(model => model.MetodosPagos): </strong>@Html.DisplayFor(model => model.MetodosPagos.Nombre)
+                    </li>
+                    <li class="list-group-item">
+                        <strong>@Html.DisplayNameFor(model => model.Planes): </strong>@Html.DisplayFor(model => model.Planes.Descripcion1)
+                    </li>
+                    <li class="list-group-item">
+                        <strong>@Html.DisplayNameFor(model => model.FechaInicio): </strong>@Html.DisplayFor(model => model.FechaInicio)
+                    </li>
+                    <li class="list-group-item">
+                        <strong>@Html.DisplayNameFor(model => model.FechaFin): </strong>@Html.DisplayFor(model => model.FechaFin)
+                    </li>
+                    <li class="list-group-item">
+                        <strong>@Html.DisplayNameFor(model => model.Cantidad): </strong>@Html.DisplayFor(model => model.Cantidad)
+                    </li>
+                    <li class="list-group-item">
+                        <strong>@Html.DisplayNameFor(model => model.PrecioUnit): </strong>@Html.DisplayFor(model => model.PrecioUnit)
+                    </li>
+                    <li class="list-group-item">
+                        <strong>@Html.DisplayNameFor(model => model.SubTotal): </strong>@Html.DisplayFor(model => model.SubTotal)
+                    </li>
+                    <li class="list-group-item">
+                        <strong>@Html.DisplayNameFor(model => model.Descuento): </strong>@Html.DisplayFor(model => model.Descuento)
+                    </li>
+                    <li class="list-group-item">
+                        <strong>@Html.DisplayNameFor(model => model.Total): </strong>@Html.DisplayFor(model => model.Total)
+                    </li>
+                    <li class="list-group-item">
+                        <strong></strong>
+                    </li>
+                    <li class="list-group-item">
+                        <strong></strong>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-footer">
+                <a asp-action="Edit" asp-route-id="@Model.IdSuscripcion" class="btn btn-primary">Editar</a>
+            </div>
+        </div>
+    </div>
+</div>

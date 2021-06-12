@@ -4,40 +4,41 @@
     ViewData["Title"] = "Editar Moneda";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 <div class="row">
     <div class="col-md-6 offset-md-3">
         <div class="card">
             <div class="card-header">
                 <div class="d-flex">
-
-                    <h1>Editar Moneda</h1>
-                     <hr />
-                     <div class="ml-auto">
-                         <a asp-action ="Index" class="btn-secondary"><i class="fas fa-arrow-left"></i></a>
-                         <form asp-action="Edit">
-                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                             <input type="hidden" asp-for="IdMoneda" />
-                             <div class="form-group">
-                                 <label asp-for="Nombre" class="control-label"></label>
-                                 <input asp-for="Nombre" class="form-control" />
-                                 <span asp-validation-for="Nombre" class="text-danger"></span>
-                             </div>
-                             <div class="form-group">
-                                 <label asp-for="Simbolo" class="control-label"></label>
-                                 <input asp-for="Simbolo" class="form-control" />
-                                 <span asp-validation-for="Simbolo" class="text-danger"></span>
-                             </div>
-                             <div class="form-group">
-                                 <input type="submit" value="Guardar" class="btn btn-primary" />
-                             </div>
-                         </form>
-                     </div>
+                    <h4>Editar Moneda</h4>
+                    <div class="ml-auto">
+                        <a asp-action="Index" class="btn btn-secondary"><i class="fas fa-arrow-left"></i></a>
                     </div>
                 </div>
-            </div>        <div>
-        </div>
+            </div>
+            <div class="card-body">
+                <form asp-action="Edit">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="IdMoneda" />
+                    <div class="form-group">
+                        <label asp-for="Nombre" class="control-label"></label>
+                        <input asp-for="Nombre" class="form-control" />
+                        <span asp-validation-for="Nombre" class="text-danger"></span>
                     </div>
+                    <div class="form-group">
+                        <label asp-for="Simbolo" class="control-label"></label>
+                        <input asp-for="Simbolo" class="form-control" />
+                        <span asp-validation-for="Simbolo" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success"><i class="fas fa-save"></i> Modificar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
-                    @section Scripts {
-                        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-                    }
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

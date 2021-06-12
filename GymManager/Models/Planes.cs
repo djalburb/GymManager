@@ -38,5 +38,6 @@ namespace GymManager.Models
 
         [ForeignKey("IdMoneda")]
         public virtual Moneda Moneda { get; set; }
+        public virtual IEnumerable<Suscripciones> Suscripciones { get; set; }
     }
 }

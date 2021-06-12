@@ -13,5 +13,6 @@ namespace GymManager.Models
         [Required(ErrorMessage = "Campo requerido")]
         [StringLength(100, ErrorMessage = "El nombre no debe tener mas de 100 caracteres")]
         public string Nombre { get; set; }
+        public virtual IEnumerable<Suscripciones> Subcripciones { get; set; }
     }
 }

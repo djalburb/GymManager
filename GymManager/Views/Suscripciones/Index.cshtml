@@ -1,0 +1,86 @@
+﻿@model IEnumerable<GymManager.Models.Suscripciones>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h1>Suscripciones</h1>
+            </div>
+            <div class="card-body">
+                <p>
+                    <a asp-action="Create" class="btn btn-success"><i class="fas fa-plus"></i> Nueva Suscripción</a>
+                </p>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Fecha)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.FechaInicio)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.FechaFin)
+                                </th>
+
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Clientes)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Planes)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Estado)
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Fecha)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.FechaInicio)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.FechaFin)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Clientes.Apellidos)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Planes.Descripcion1)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Estado)
+                                    </td>
+                                    <td>
+                                        <div class="btn-group">
+                                            <button type="button" class="btn-sm btn-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Opciones
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <a asp-action="Edit" asp-route-id="@item.IdSuscripcion" class="dropdown-item"><i class="fas fa-edit"></i> Editar</a> |
+                                                <a asp-action="Details" asp-route-id="@item.IdSuscripcion" class="dropdown-item"><i class="fas fa-info-circle"></i> Detalles</a> |
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

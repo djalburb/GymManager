@@ -37,5 +37,9 @@ namespace GymManager.Models
 
         [ForeignKey("IdCiudad")]
         public virtual Ciudades Ciudades { get; set; }
+        public virtual IEnumerable<Suscripciones> Subcripciones { get; set; }
+
+        public string FullName { get { return IdCliente + " - " + Nombre + " " + Apellidos; } }
+
     }
 }

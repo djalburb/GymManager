@@ -69,7 +69,6 @@ namespace GymManager.Controllers
             ViewData["IdMoneda"] = new SelectList(_context.Monedas, "IdMoneda", "Nombre", planes.IdMoneda);
             return View(planes);
         }
-        [Authorize(Roles = "Administrador")]
         // GET: Planes/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
