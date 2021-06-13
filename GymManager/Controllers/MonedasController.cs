@@ -10,6 +10,7 @@ using GymManager.Models;
 
 namespace GymManager.Controllers
 {
+    
     public class MonedasController : Controller
     {
         private readonly ApplicationDbContext _context;

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using GymManager.Data;
 using GymManager.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace GymManager.Controllers
 {
